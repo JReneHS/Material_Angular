@@ -1,0 +1,21 @@
+<!-- Directiva Clasica de Angular 2 -->
+<h1 *ngIf="isLoged; else other">Bienvenido {{ username }}</h1>
+<ng-template #other>
+    <h1>Iniciar Sesion</h1>
+</ng-template>
+
+<!-- Nuevo Control de Flujo a partir de Angular 17 -->
+@if (isLoged) {
+    <h1>Bienvenido {{ username | uppercase }}</h1>
+} @else {
+    <h1>Iniciar Sesion</h1>
+}
+
+<!-- Directiva Clasica de Angular 2 -->
+<p *ngFor="let user of users">{{user.name | lowercase }}</p>
+
+<!-- Nuevo Control de Flujo a partir de Angular 17 -->
+@for (user of users; track user.id) {
+    <p>{{ user.name | uppercase }}</p>
+}
+
